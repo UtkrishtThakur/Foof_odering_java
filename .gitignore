@@ -1,0 +1,19 @@
+# Maven build directory
+target/
+*.class
+
+# Persistent data directory and temporary files
+data/
+*.tmp
+*.log
+
+# IDE & Editor specific files
+.idea/
+*.iml
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Artifacts
+food-ordering-system.jar

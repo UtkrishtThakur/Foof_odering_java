@@ -1,0 +1,23 @@
+services:
+  food-ordering-system:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: food-ordering-system:latest
+    container_name: food-ordering-system
+    # Enable interactive terminal so console menus can read user input
+    stdin_open: true   # equivalent to docker run -i
+    tty: true          # equivalent to docker run -t
+    restart: "no"
+    volumes:
+      - food_ordering_data:/app/data
+    # Optional: Pre-provision the default administrator to skip the first-run wizard
+    # environment:
+    #   - FOOD_ORDERING_ADMIN_ID=admin
+    #   - FOOD_ORDERING_ADMIN_NAME=Administrator
+    #   - FOOD_ORDERING_ADMIN_EMAIL=admin@foodordering.com
+    #   - FOOD_ORDERING_ADMIN_PASSWORD=AdminPass123
+    #   - FOOD_ORDERING_ADMIN_CODE=ADM123
+
+volumes:
+  food_ordering_data:
